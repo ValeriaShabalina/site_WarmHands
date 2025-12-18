@@ -6,17 +6,43 @@
     <link rel="stylesheet" href="css/indexstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat&family=Raleway&family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
-    <div class="warm-hands">
-        <h1>Warm Hands</h1>
-    </div>
+
+    <header id="header">
+        <div class="container">
+            <div class="navbar">
+                <a href="#">
+                    <img src="" alt="logo" class="logo">
+                </a>
+                <ul class="nav-items">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="nav-button" onclick="myFunction(this)">
+                <div class="bar"></div>
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="container">
     <hr>
     <h3>г. Екатеринбург, ул. Шейкмана, 19, офис 4</h3>
+    
     <div class="buttons-container">
         <button class="btn btn-primary">Записаться (онлайн запись)</button>
         <button class="btn btn-secondary">Связаться (WhatsApp)</button>
     </div>
     <hr>
+
     <div class="content-block">
         <div class="image-container">
             <img src="images/main-photo.jpg" alt="Студия массажа">
@@ -26,6 +52,7 @@
             <p>Приветствую вас! Меня зовут Валерия, я массажист, косметолог, эстетист с опытом работы более 5-ти лет, являюсь спа-технологом международного уровня.</p>
         </div>
     </div>
+
     <div class="gallery-container">
         <div class="gallery-item">
             <img src="images/studio-design.jpg" alt="Дизайн студии">
@@ -41,14 +68,28 @@
         </div>
     </div>
     <hr>
+
     <div class="services-container">
         <a class="service-card">Эстетическая косметология</a>
         <a class="service-card">Массаж тела</a>
         <a class="service-card">СПА</a>
     </div>
+
     <hr>
+</div>
 <footer>
     <p>© 2025 Warm Hands. Все права защищены</p>
 </footer>
+
+<script>
+    function myFunction(x){
+        x.classList.toggle("change");
+    }
+
+    document.querySelector(".nav-button").addEventListener("click", function (){
+        document.querySelector(".nav-items").classList.toggle("hide-show");
+    })
+</script>
+
 </body>
 </html>
