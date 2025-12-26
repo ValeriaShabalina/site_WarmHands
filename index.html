@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <head>
-    <title>
-        Warm Hands
-    </title>
+    <title>Warm Hands</title>
     <link rel="stylesheet" href="css/indexstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat&family=Raleway&family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
 </head>
-
 
 <body>
 
@@ -16,21 +13,27 @@
                 <a href="#">
                     <img src="images/logo.PNG" alt="logo" class="logo">
                 </a>
-                <ul class="nav-items">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contacts</a></li>
-                </ul>
-            </div>
-            <div class="nav-button" onclick="myFunction(this)">
-                <div class="bar"></div>
-                <div class="bar1"></div>
-                <div class="bar2"></div>
+                <div class="nav-button">
+                    <div class="bar"></div>
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                </div>
+                <div class="nav-overlay"></div>
+                <div class="nav-items">
+                    <div class="menu-header">
+                        <div class="menu-title">Меню</div>
+                        <button class="close-menu-btn">&times;</button>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-
     </header>
 
     <div class="container">
@@ -77,19 +80,77 @@
 
     <hr>
 </div>
-<footer>
-    <p>© 2025 Warm Hands. Все права защищены</p>
-</footer>
+    
+    <footer>
+        <p>© 2025 Warm Hands. Все права защищены</p>
+    </footer>
 
-<script>
-    function myFunction(x){
-        x.classList.toggle("change");
+    <script>
+    const navButton = document.querySelector(".nav-button");
+    const navItems = document.querySelector(".nav-items");
+    const navOverlay = document.querySelector(".nav-overlay");
+    const closeMenuBtn = document.querySelector(".close-menu-btn");
+
+    // Функция для блокировки/разблокировки скролла
+    function toggleBodyScroll(lock) {
+        if (lock) {
+            // Блокируем скролл страницы
+            document.body.style.overflow = 'hidden';
+            // Для iOS устройств
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+        } else {
+            // Разблокируем скролл страницы
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+        }
     }
 
-    document.querySelector(".nav-button").addEventListener("click", function (){
-        document.querySelector(".nav-items").classList.toggle("hide-show");
-    })
-</script>
+    // Открытие меню по клику на бургер
+    navButton.addEventListener("click", function (){
+        navItems.classList.toggle("show");
+        navOverlay.classList.toggle("active");
+        navButton.classList.toggle("change");
+        toggleBodyScroll(true); // Блокируем скролл
+    });
+
+    // Закрытие меню по клику на крестик
+    closeMenuBtn.addEventListener("click", function (){
+        navItems.classList.remove("show");
+        navOverlay.classList.remove("active");
+        navButton.classList.remove("change");
+        toggleBodyScroll(false); // Разблокируем скролл
+    });
+
+    // Закрытие меню при клике на затемненную область
+    navOverlay.addEventListener("click", function (){
+        navItems.classList.remove("show");
+        navOverlay.classList.remove("active");
+        navButton.classList.remove("change");
+        toggleBodyScroll(false); // Разблокируем скролл
+    });
+
+    // Закрытие меню при клике на ссылку
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navItems.classList.remove("show");
+            navOverlay.classList.remove("active");
+            navButton.classList.remove("change");
+            toggleBodyScroll(false); // Разблокируем скролл
+        });
+    });
+
+    // Закрытие меню при нажатии Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            navItems.classList.remove("show");
+            navOverlay.classList.remove("active");
+            navButton.classList.remove("change");
+            toggleBodyScroll(false); // Разблокируем скролл
+        }
+    });
+    </script>
 
 </body>
 </html>
