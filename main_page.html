@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Warm Hands</title>
+    <title>Тёплые ручки</title>
     <link rel="stylesheet" href="css/indexstyle.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat&family=Raleway&family=Pacifico&family=Poppins&display=swap"
         rel="stylesheet">
+    <script src="js/main_page.js" defer></script>
 </head>
 
 <body>
-
     <header id="header">
         <div class="container">
             <div class="navbar">
                 <a href="#">
                     <img src="images/logo.PNG" alt="logo" class="logo">
                 </a>
-                <h1>WARM HANDS</h1>
-                <div class="nav-button">
+                <h1>ТЁПЛЫЕ РУЧКИ</h1>
+                <div class="spacer"></div>
+                <!-- <div class="nav-button">
                     <div class="bar"></div>
                     <div class="bar1"></div>
                     <div class="bar2"></div>
@@ -29,49 +30,53 @@
                         <button class="close-menu-btn">&times;</button>
                     </div>
                     <ul class="nav-links">
-                        <li><a href="#">Главная страница</a></li>
-                        <li><a href="#">Обо мне</a></li>
-                        <li><a href="#">Портфолио</a></li>
-                        <li><a href="https://vk.com/@warm_hands_ekb-kontakty">Контакты</a></li>
+                        <li><a href="#">Главная страница</a></li> -->
+                        <!-- <li><a href="#">Обо мне</a></li>
+                        <li><a href="#">Портфолио</a></li> -->
+                        <!-- <li><a href="https://vk.com/@teplye_ruchki_ekb-kontakty">Контакты</a></li>
                     </ul>
-                </div>
+                </div> --> 
             </div>
         </div>
     </header>
 
     <div class="container">
+        
+        
         <hr>
         <h3>г. Екатеринбург, ул. Шейкмана, 19, офис 4</h3>
 
         <div class="buttons-container">
             <button class="btn btn-primary"> <a href="https://dikidi.net/1908437" class="dikidi">Записаться (онлайн запись)</a></button>
-            <button class="btn btn-secondary"><a href="https://wa.me/79923386989" class="whatsapp">Связаться (WhatsApp)</a></button>
+            <button class="btn btn-secondary"><a href="https://vk.com/teplye_ruchki_ekb" class="VK">Связаться (Вконтакте)</a></button>
+            <button class="btn btn-third"><a href="https://t.me/teplye_ruchki_ekb" class="TG">Связаться (Telegram)</a></button>
         </div>
         <hr>
 
         <div class="content-block">
             <div class="image-container">
-                <img src="images/main-photo.jpg" alt="Студия массажа">
+                <img src="images/main-photo.png" alt="Студия массажа">
             </div>
             <div class="MainText">
-                <p>Студия массажа</p>
-                <p>Приветствую вас! Меня зовут Валерия, я массажист, косметолог, эстетист с опытом работы более 5-ти
-                    лет, являюсь спа-технологом международного уровня.</p>
+                <div class="Zagolovok"><p>Мастер Валерия</p></div>
+                <p>Массажист, косметолог-эстетист с опытом работы более 5-ти лет.<br>
+                    В начале пути была разработана авторская методика, которая применяется сегодня!⭐️ <br>
+                    Специализируюсь на глубокотканных техниках массажа - это чудо, не имеющее аналогов.</p>
             </div>
         </div>
 
         <div class="gallery-container">
             <div class="gallery-item">
                 <img src="images/studio-design.jpg" alt="Дизайн студии">
-                <p>Дизайн студии</p>
+                <!-- <p>Дизайн студии</p> -->
             </div>
             <div class="gallery-item">
                 <img src="images/process.jpg" alt="Процесс массажа">
-                <p>Процесс массажа</p>
+                <!-- <p>Процесс массажа</p> -->
             </div>
             <div class="gallery-item">
                 <img src="images/details.jpg" alt="Детали интерьера">
-                <p>Детали интерьера</p>
+                <!-- <p>Детали интерьера</p> -->
             </div>
         </div>
         <hr>
@@ -83,79 +88,16 @@
         </div>
 
         <hr>
+
+        <!-- Яндекс карты -->
+        <div class="map">
+            <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=191295837847" width="560" height="400" frameborder="0"></iframe>
+        </div>
     </div>
 
     <footer>
-        <p>© 2026 Warm Hands. Все права защищены</p>
+        <p>© 2026 Тёплые ручки. Все права защищены</p>
     </footer>
-
-    <script>
-        const navButton = document.querySelector(".nav-button");
-        const navItems = document.querySelector(".nav-items");
-        const navOverlay = document.querySelector(".nav-overlay");
-        const closeMenuBtn = document.querySelector(".close-menu-btn");
-
-        // Функция для блокировки/разблокировки скролла
-        // function toggleBodyScroll(lock) {
-        //     if (lock) {
-        //         // Блокируем скролл страницы
-        //         document.body.style.overflow = 'hidden';
-        //         // Для iOS устройств
-        //         document.body.style.position = 'fixed';
-        //         document.body.style.width = '100%';
-        //     } else {
-        //         // Разблокируем скролл страницы
-        //         document.body.style.overflow = '';
-        //         document.body.style.position = '';
-        //         document.body.style.width = '';
-        //     }
-        // }
-
-        // Открытие меню по клику на бургер
-        navButton.addEventListener("click", function () {
-            navItems.classList.toggle("show");
-            navOverlay.classList.toggle("active");
-            navButton.classList.toggle("change");
-            toggleBodyScroll(false); // Блокируем скролл
-        });
-
-        // Закрытие меню по клику на крестик
-        closeMenuBtn.addEventListener("click", function () {
-            navItems.classList.remove("show");
-            navOverlay.classList.remove("active");
-            navButton.classList.remove("change");
-            toggleBodyScroll(false); // Разблокируем скролл
-        });
-
-        // Закрытие меню при клике на затемненную область
-        navOverlay.addEventListener("click", function () {
-            navItems.classList.remove("show");
-            navOverlay.classList.remove("active");
-            navButton.classList.remove("change");
-            toggleBodyScroll(false); // Разблокируем скролл
-        });
-
-        // Закрытие меню при клике на ссылку
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navItems.classList.remove("show");
-                navOverlay.classList.remove("active");
-                navButton.classList.remove("change");
-                toggleBodyScroll(false); // Разблокируем скролл
-            });
-        });
-
-        // Закрытие меню при нажатии Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                navItems.classList.remove("show");
-                navOverlay.classList.remove("active");
-                navButton.classList.remove("change");
-                toggleBodyScroll(false); // Разблокируем скролл
-            }
-        });
-    </script>
-
 </body>
 
 </html>

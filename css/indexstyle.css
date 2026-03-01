@@ -13,7 +13,7 @@ body {
     line-height: 1.6;
 }
 
-a.whatsapp, a.dikidi {
+a.VK, a.dikidi, a.TG {
     color: white;
     text-decoration: none;
 }
@@ -93,7 +93,12 @@ h3 {
 }
 
 .btn-secondary {
-    background: #2bbd18;
+    background: rgb(29, 161, 223);
+    color: white;
+}
+
+.btn-third {
+    background: rgb(83, 175, 218);
     color: white;
 }
 
@@ -126,7 +131,7 @@ h3 {
 
 .MainText {
     flex: 1;
-    text-align: left;
+    /* text-align: left; */
     padding: 0;
 }
 
@@ -135,6 +140,10 @@ h3 {
     max-width: 800px;
     margin: 40px auto;
     padding: 0 20px;
+    text-align:left;
+}
+
+.Zagolovok {
     text-align: center;
 }
 
@@ -284,6 +293,11 @@ footer {
     padding: 20px;
     margin-top: 50px;
     font-family: 'Montserrat', sans-serif;
+}
+
+.map {
+    text-align: center;
+    
 }
 
 @keyframes fadeIn {
